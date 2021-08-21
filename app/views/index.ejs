@@ -16,23 +16,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
 
+    <script>
+        const hora = Date();
+
+    </script>
+
 </head>
 <body>
     <div class="sidenav">
-        <a href="#">Titulo da votação</a>
-        <a href="#">Titulo da votação</a>
-        <a href="#">Titulo da votação</a>
-      </div>
-      
-      <div class="content">
-        <h2>titulo da votação</h2>
-        <label for="votes">
-            <select name="vote" id="vote">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </label>
-      </div>
+        <a href="#">sair</a>
+        <br>
+        <br>
+        <div>
+            <% if(validacao.length > 0) {%>
+                <div class="div-container-erro">
+                    <div class="div-style-erro">
+                        <div class="div-erro" >
+                            <strong><p>Atenção!</p></strong>
+                            <ul>
+                                <% for(var i = 0; i < validacao.length; i++) { %>
+                                    <li><%=validacao[i].msg%></li>
+                                <% } %>
+                            </ul>   
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <form action="/criarvotacao" method="POST">
+            <input type="text" id="title" name="title" class="input-one"  placeholder="Titulo">
+            <input type="text" id="op1" name="op1" class="input-one"  placeholder="Primeira opção">
+            <input type="text" id="op2" name="op2" class="input-one"  placeholder="Segunda opção">
+            <input type="text" id="op3" name="op3" class="input-one"  placeholder="Terceira opção">
+            <input type="date" id="date_start" name="date_start" class="input-one"  placeholder="00/00/00">
+            <input type="date" id="date_end" name="date_end" class="input-one"  placeholder="00/00/00">
+            <button type="submit" class="button2" id="button">Criar votação</button>    
+        </form>
+        </div>
+        
+        <% if(cards.length > 0) {%>
+            <% for(var i = 0; i < cards.length; i++) { %> 
+                <div class="content">
+                    <h2><%=cards[i].title%></h2>
+                    <form action="/votar" method="POST">
+                        <label for="votes">
+                            <select class="style-select" name="vote" id="vote">
+                                <option value="<%=cards[i].option_1%>"><%=cards[i].option_1%></option>
+                                <option value="<%=cards[i].option_2%>"><%=cards[i].option_2%></option>
+                                <option value="<%=cards[i].option_3%>"><%=cards[i].option_3%></option>
+                            </select>
+                        </label>
+                        <input name="dados" value="<%=cards[i].option_1%>" hidden>
+                        <input name="dados" value="<%=cards[i].option_2%>" hidden>
+                        <input name="dados" value="<%=cards[i].option_3%>" hidden>
+                        <input name="id" value="<%=cards[i].voteid%>" hidden>
+                        <p><%=cards[i].option_1%>  <%=cards[i].nm_vote%></p>
+                        <p><%=cards[i].option_2%>  <%=cards[i].nm_vote2%></p>
+                        <p><%=cards[i].option_3%>  <%=cards[i].nm_vote3%></p>
+                        <p><%cards[i].date_start%> <%=cards[i].date_end%></p>
+                        <button type="submit" class="button" id="button">vota</button>
+                    </form>
+                </div>
+            <% } %>
+        <% } %>
+     
+               
+
 </body>
 </html> 

@@ -10,46 +10,47 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     
-        <link href="css/login.css" rel="stylesheet">
+        <link href="css/login.css" rel="stylesheet">    
 
     </head>
     <body>
         <div class="container">
             <div class="div-style">
                 <div class="div-cadastro">          
-                    <form action="/cadastrar" method="POST">
-                        <br>
-                        <i class="fab fa-angellist fa-3x"></i>
-                        <h1 class="style-title-h1">Login</h1>
-                        <br>
-                        <div>
-                            <% if(validacao.length > 0) {%>
-                                <div class="div-container-erro">
-                                    <div class="div-style-erro">
-                                        <div class="div-erro">
-                                            <strong>Atenção!</strong>
-                                            <ul>
-                                                <% for(var i = 0; i < validacao.length; i++) { %>
-                                                    <li><%=validacao[i].msg%></li>
-                                                <% } %>
-                                            </ul>   
+                        <form action="/autenticar" method="POST">
+                            <br>
+                            
+                            <h1 class="style-title-h1"><i class="fab fa-angellist fa-2x"></i><br>Login</h1>
+                            <br>
+                            <div>
+                                <% if(validacao.length > 0) {%>
+                                    <div class="div-container-erro">
+                                        <div class="div-style-erro">
+                                            <div class="div-erro">
+                                                <strong>Atenção!</strong>
+                                                <ul>
+                                                    <% for(var i = 0; i < validacao.length; i++) { %>
+                                                        <li><%=validacao[i].msg%></li>
+                                                    <% } %>
+                                                </ul>   
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <% } %>
-                        </div>
-                        <br>
-                        <div>
-                            <input type="email" id="email" name="email" class="input-one"  placeholder="name@example.com">
-                        </div>
-    
-                        <div>
-                            <input type="password" id="password" name="password" class="input-two"  placeholder="Password">
-                        </div>
-                        <br><br>
-                        <button type="submit" class="button">login</button>
-                    </form>
-                </div>
+                                <% } %>
+                            </div>
+                            <br>
+                            <div>
+                                <input type="email" id="email" name="email" class="input-one"  placeholder="name@example.com">
+                            </div>
+        
+                            <div>
+                                <input type="password" id="password" name="password" class="input-two"  placeholder="Password">
+                            </div>
+                            <br><br>
+                            <button type="submit" class="button">login</button>
+                        </form>
+                    <button  class="button2" type="button" id="btn_cadastro" > Fazer cadastro <a href="/cadastro">>></a></button>
+                </div>    
             </div>
         </div> 
     </body>

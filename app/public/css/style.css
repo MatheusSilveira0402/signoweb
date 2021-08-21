@@ -7,12 +7,14 @@
     margin: 0;
     font-family: 'Bebas Neue', cursive;
     
+    
   }
   
-  /* Style the side navigation */
+  
   .sidenav {
+    color: white;
     height: 100%;
-    width: 200px;
+    width: 300px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -22,22 +24,98 @@
   }
   
   
-  /* Side navigation links */
+
   .sidenav a {
     color: white;
     padding: 16px;
     text-decoration: none;
     display: block;
+    
   }
   
-  /* Change color on hover */
+  
   .sidenav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: rgb(102, 4, 86);
+    color: white;
   }
   
-  /* Style the content */
+  
   .content {
-    margin-left: 200px;
+    margin-left: 350px;
     padding-left: 20px;
+    margin-top: 52px;
+    width: 100%; 
+    height: 100%;
+    padding: 20px;
+    max-width: 400px;
+    max-height: 350px;
+    background-color:rgb(102, 4, 86);
+    color: white;
+    border-top-left-radius: 18px;
+    border: 0ch;
   }
+  .input-one{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+    max-width: 235px;
+    max-height: 30px;
+    border-top-left-radius: 8px;
+    border: 0ch;
+  }
+
+.button {
+    color: black;
+    border: 0ch;
+    background-color: white;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 240px;
+    max-height: 30px;
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    font-size: 24px;
+    transition: .3s ease-in;
+    font-family: 'Bebas Neue', cursive;
+}
+.button:hover{
+    color:white;
+    background-color:rgb(99, 1, 1) ;
+}
+
+.button2 {
+  color: black;
+  border: 0ch;
+  background-color: white;
+  margin-left: 30px;
+  margin-top: 3px;
+  width: 100%;
+  height: 100%;
+  max-width: 235px;
+  max-height: 30px;
+  border-top-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  font-size: 24px;
+  transition: .3s ease-in;
+  font-family: 'Bebas Neue', cursive;
+}
+.button2:hover{
+  color:white;
+  background-color:rgb(99, 1, 1) ;
+}
+.style-select{
+  width: 100%;
+  height: 25px;
+  max-width: 240px;
+  border-bottom-right-radius: 8px;
+}
+.div-erro strong{
+  text-align: center;
+
+}
+.div-erro {
+  margin: 8px;
+
+}
