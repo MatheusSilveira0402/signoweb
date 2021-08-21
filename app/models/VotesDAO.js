@@ -31,9 +31,9 @@ VotesDAO.prototype.insertVotes = function(dados, res){
 
     this._connection.query(sql, values, function(err, results){
         if(this._cards){
-            res.render("index", {validacao : {},  cards : this._cards})
+            res.redirect("/");
         } else{
-            res.render("index", {validacao : {},  cards : {}})
+            res.redirect("/");
         }
     });
 }
